@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: #0B0E14;
+  color: #F8FAFC;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom modern sleek scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0E14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E2638;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2D3952;
+}
+
+/* Fintech Operations Card Styling */
+.fintech-card {
+  background: #131822;
+  border: 1px solid #1E2638;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fintech-card-hover:hover {
+  border-color: #2D3952;
+  box-shadow: 0 6px 24px -2px rgba(0, 0, 0, 0.6);
+}
+
+.font-mono-numeric {
+  font-family: 'JetBrains Mono', monospace;
+  font-feature-settings: 'tnum' on, 'lnum' on;
+}
+
+/* Dynamic Delta Counter Flash Animation */
+@keyframes counterGlow {
+  0% {
+    color: #34D399;
+    text-shadow: 0 0 12px rgba(52, 211, 153, 0.8);
+    transform: scale(1.04);
+  }
+  50% {
+    color: #10B981;
+    text-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+  }
+  100% {
+    text-shadow: none;
+    transform: scale(1);
+  }
+}
+
+.counter-value-updated {
+  animation: counterGlow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Soft Orbital Ambient Pulse */
+@keyframes orbitalPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.orbital-glow {
+  animation: orbitalPulse 6s ease-in-out infinite;
+}
